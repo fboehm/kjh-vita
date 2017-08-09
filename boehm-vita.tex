@@ -44,8 +44,21 @@
 \usepackage{org-preamble-xelatex} 
 \usepackage{fontawesome,url}
 \usepackage{datetime}
-%\usepackage{url}
-
+\usepackage[
+  top=0.5in,
+  bottom=0.5in,
+  left=1in,
+  right=1in,
+%  headheight=17pt, % as per the warning by fancyhdr
+  includehead,includefoot,
+  heightrounded % to avoid spurious underfull messages
+]{geometry} 
+\usepackage{fancyhdr}
+\usepackage{lipsum} % only for showing some sample text
+\fancyhf{} % clear all header and footers
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\cfoot{\thepage}
+\pagestyle{fancy}
 %%%------------------------------------------------------------------------
 %%% Metadata
 %%%------------------------------------------------------------------------
@@ -84,16 +97,16 @@
 %% If you comment it out, be sure to remove the \rfoot comment below, too.
 %\input{vc}
 
-\newfontfamily\tgtermes{Optima}
-\makeatletter
-  \begingroup
-    \tgtermes
-    \DeclareFontShape{\f@encoding}{\rmdefault}{m}{sc}{%
-      <-> ssub * \f@family/m/sc}{}
-    \DeclareFontShape{\f@encoding}{\rmdefault}{bx}{sc}{%
-      <-> ssub * \f@family/bx/sc}{}
-  \endgroup
-\makeatother
+%\newfontfamily\tgtermes{Optima}
+%\makeatletter
+%  \begingroup
+%    \tgtermes
+%    \DeclareFontShape{\f@encoding}{\rmdefault}{m}{sc}{%
+%      <-> ssub * \f@family/m/sc}{}
+%    \DeclareFontShape{\f@encoding}{\rmdefault}{bx}{sc}{%
+%      <-> ssub * \f@family/bx/sc}{}
+%  \endgroup
+%\makeatother
 
 
 
@@ -162,7 +175,7 @@
 %%%------------------------------------------------------------------------
 %%% Address and contact block
 %%%------------------------------------------------------------------------
-\begin{minipage}[t]{2.95in}
+\begin{minipage}[t]{4.95in}
  \flushright {\footnotesize 
  \href{http://www.stat.wisc.edu}{Department of Statistics}, \\ 1300 University Ave., \\ 1220 Medical Sciences Center, \\ \vspace{-0.05in} Madison, \textsc{WI} 53706.}  
   
@@ -173,7 +186,8 @@
 %\end{minipage}
 \hfill
 \begin{minipage}[t]{1.3in}
-  \flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
+  \flushright \footnotesize \myphone \, \faPhone \\ 
+  %\flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
   {\scriptsize  \texttt{\href{http://twitter.com/fredboehm128}{\mytwitter}} \, \faTwitter }  \\ 
   {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}} \, \faEnvelope} \\
   {\scriptsize  \texttt{\href{\myweb}{\myweb}} \, \faGlobe}
@@ -182,7 +196,8 @@
 \medskip
 
 %% Name 
-\noindent{\LARGE\scheader \textsc{frederick boehm}}
+%\noindent{\LARGE\scheader \textsc{Frederick Boehm}}
+\noindent{ \textbf{\LARGE{F}\Large{REDERICK}} \textbf{\LARGE{B}\Large{OEHM}}}
 \reversemarginpar
 
 \bigskip       
@@ -242,7 +257,7 @@
 %\normalsize
 
 %\bigskip
-\noindent\emph{Journal articles \vspace{0.05in}}
+\noindent\emph{Peer-reviewed journal articles \vspace{0.05in}}
  
 %% Use revnumerate environment if numbered publications are needed. 
 %% (Include it above in the preamble).
