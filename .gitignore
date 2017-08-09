@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.aux
+*.bcf
+*.log
+*.out
+*.run.xml
+*.pdf
+*.Rproj
+vc.tex

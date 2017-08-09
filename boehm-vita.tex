@@ -43,7 +43,8 @@
 \documentclass[11pt,article,oneside]{memoir}   
 \usepackage{org-preamble-xelatex} 
 \usepackage{fontawesome,url}
-
+\usepackage{datetime}
+%\usepackage{url}
 
 %%%------------------------------------------------------------------------
 %%% Metadata
@@ -51,36 +52,51 @@
 
 %% Change as needed. Or just add me as a coauthor. Only some of these are 
 %% used below in the hyperref declaration and address banner section.
-\def\myauthor{Kieran Healy}
+\def\myauthor{Frederick Boehm}
 \def\mytitle{Vita}
 \def\mycopyright{\myauthor}
 \def\mykeywords{}
 \def\mybibliostyle{plain}
 \def\mybibliocommand{}
 \def\mysubtitle{}
-\def\myaffiliation{Duke University}
-\def\myaddress{Sociology Department}
-\def\myemail{kjhealy@soc.duke.edu}
-\def\myweb{http://www.kieranhealy.org}
-\def\myphone{(919) 660-5737}
-\def\myfax{(919) 660-5623}
-\def\mytwitter{@kjhealy}
+\def\myaffiliation{University of Wisconsin-Madison}
+\def\myaddress{Statistics Department}
+\def\myemail{fjboehm@wisc.edu}
+\def\myweb{https://fboehm.us}
+\def\myphone{(715) 252-3929}
+%\def\myfax{(919) 660-5623}
+\def\mytwitter{@fredboehm128}
 \def\myversion{}
 \def\myrevision{}
 
 
-\def\myaffiliation{Duke University}
-\def\myauthor{Kieran Healy}
+\def\myaffiliation{University of Wisconsin-Madison}
+\def\myauthor{Frederick Boehm}
 \date{} % not used (revision control instead)
-\def\mykeywords{Kieran, Healy, Kieran Healy, Vita, CV, Resume, Sociology}
+\def\mykeywords{Vita, CV, Statistics}
 
 %%%------------------------------------------------------------------------  
 %%% Git version tracking 
 %%%------------------------------------------------------------------------
 
+%\immediate\write18{sh ./vc}
 %% If you don't use git or the vc package (from CTAN), comment this out.
 %% If you comment it out, be sure to remove the \rfoot comment below, too.
-\input{vc}
+%\input{vc}
+
+\newfontfamily\tgtermes{Optima}
+\makeatletter
+  \begingroup
+    \tgtermes
+    \DeclareFontShape{\f@encoding}{\rmdefault}{m}{sc}{%
+      <-> ssub * \f@family/m/sc}{}
+    \DeclareFontShape{\f@encoding}{\rmdefault}{bx}{sc}{%
+      <-> ssub * \f@family/bx/sc}{}
+  \endgroup
+\makeatother
+
+
+
 
 %%%------------------------------------------------------------------------
 %%% Document
@@ -94,17 +110,18 @@
 %% Consolas or inconsolata are good alternatives.
 \setromanfont[Mapping={tex-text}, 
 	Numbers={OldStyle},
-	Ligatures={Common}]{Minion Pro}
+	%Ligatures={Common}]{Minion Pro}
+	Ligatures={Common}]{Baskerville}
 \setsansfont[Mapping=tex-text,
 	Ligatures={Common}, 
-	Colour=AA0000]{Unit-Medium}
-\setmonofont[Mapping=tex-text,Scale=0.72]{PragmataPro} 
+	Colour=AA0000]{Arial}
+\setmonofont[Mapping=tex-text,Scale=0.72]{American Typewriter} 
 
-\newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
+%\newfontface\scheader[SmallCapsFont={Arial},SmallCapsFeatures={Letters=SmallCaps}]{Arial}
 
-\newfontface\addressblock[Mapping={tex-text}, 
-	Numbers={OldStyle},
-	Ligatures={Common}]{Minion Pro Medium Caption}
+%\newfontface\addressblock[Mapping={tex-text}, 
+%	Numbers={OldStyle},
+%	Ligatures={Common}]{Minion Pro Medium Caption}
 
 
 %%%------------------------------------------------------------------------
@@ -138,8 +155,8 @@
 % These lines will insert git revision info in the footer, using the vc
 % package---see docs for vc package for details. Comment out this line
 % if you're not using vc, and also remove the \input{vc} line above.
-\pagestyle{kjh}
-\thispagestyle{kjhgit}
+%\pagestyle{kjh}
+%\thispagestyle{kjhgit}
 
 
 %%%------------------------------------------------------------------------
@@ -147,7 +164,7 @@
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.95in}
  \flushright {\footnotesize 
- \href{http://sociology.duke.edu}{Department of Sociology}, \\ Box 90088, \\ Duke University, \\ \vspace{-0.05in} Durham, \textsc{nc} 27708.}  
+ \href{http://www.stat.wisc.edu}{Department of Statistics}, \\ 1300 University Ave., \\ 1220 Medical Sciences Center, \\ \vspace{-0.05in} Madison, \textsc{WI} 53706.}  
   
 \end{minipage}
 \hfill     
@@ -157,7 +174,7 @@
 \hfill
 \begin{minipage}[t]{1.3in}
   \flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
-  {\scriptsize  \texttt{\href{http://twitter.com/kjhealy}{\mytwitter}} \, \faTwitter }  \\ 
+  {\scriptsize  \texttt{\href{http://twitter.com/fredboehm128}{\mytwitter}} \, \faTwitter }  \\ 
   {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}} \, \faEnvelope} \\
   {\scriptsize  \texttt{\href{\myweb}{\myweb}} \, \faGlobe}
 \end{minipage}
@@ -165,7 +182,7 @@
 \medskip
 
 %% Name 
-\noindent{\LARGE\scheader \textsc{kieran healy}}
+\noindent{\LARGE\scheader \textsc{frederick boehm}}
 \reversemarginpar
 
 \bigskip       
@@ -173,20 +190,20 @@
 
 %% Appointments
 % \medskip
-\marginhead{\sffamily appointments}
+%\marginhead{\sffamily appointments}
 
-\ind Associate Professor in Sociology and the Kenan Institute for Ethics, Duke University, 2009--Present.      
+%\ind Associate Professor in Sociology and the Kenan Institute for Ethics, Duke University, 2009--Present.      
 
-\ind Visiting Associate Professor of Sociology, Duke University, 2008--2009.
+%\ind Visiting Associate Professor of Sociology, Duke University, 2008--2009.
 
-\ind Associate Professor of Sociology, University of Arizona, 2008.
+%\ind Associate Professor of Sociology, University of Arizona, 2008.
 
-\ind Research Fellow, Social and Political Theory Program,
-Research School of Social Sciences, Australian National University, 2003--2006.
+%\ind Research Fellow, Social and Political Theory Program,
+%Research School of Social Sciences, Australian National University, 2003--2006.
 
-\ind Assistant Professor of Sociology, University of Arizona, 2001--2008.
+%\ind Assistant Professor of Sociology, University of Arizona, 2001--2008.
 
-\bigskip
+%\bigskip
 
 %% Education
 
@@ -194,37 +211,37 @@ Research School of Social Sciences, Australian National University, 2003--2006.
 
 %\noindent\emph{Princeton University \vspace{0.01in}}
 
-\ind Ph.D, Sociology, Princeton University, 2001.
+\ind Ph.D., Statistics, University of Wisconsin-Madison, 2018 (anticipated).
 
-\ind \hspace{0.35in} \footnotesize Dissertation: \emph{Exchange in Blood and Organs}.\newline Winner, American Sociological Association's Dissertation Award.\normalsize \vspace{0.05in}
+%\ind \hspace{0.35in} \footnotesize Dissertation: \emph{Exchange in Blood and Organs}.\newline Winner, American Sociological Association's Dissertation Award.\normalsize \vspace{0.05in}
 
-\ind M.A., Sociology, Princeton University, 1998. 
+\ind M.D., University of Wisconsin-Madison, 2007. 
 
 %\medskip
 %\noindent\emph{National University of Ireland (Cork)\vspace{0.02in}}
 
-\ind M.A., Sociology, First Class, National University of Ireland (Cork), 1994.
+\ind M.S., Population Health Sciences, University of Wisconsin-Madison, 2007.
 
-\ind \hspace{0.35in} \footnotesize Thesis: \emph{The Language of Influence: Public Debate and the Politics of the X-case.} \normalsize \vspace{0.01in}
+%\ind \hspace{0.35in} \footnotesize Thesis: \emph{The Language of Influence: Public Debate and the Politics of the X-case.} \normalsize \vspace{0.01in}
 
-\ind B.A. (Joint Hons.), First Class, National University of Ireland (Cork), 1993.
+\ind B.S. with Honors, Chemistry, Mathematics, and Biochemistry, University of Wisconsin-Madison, 2001.
 
 \bigskip
  
 %% Publications
 \marginhead{\sffamily {\vskip 0.35em} publications}
 \medskip
-\noindent\emph{Book \vspace{0.01in}}
+%\noindent\emph{Book \vspace{0.01in}}
+%
+%\ind  Kieran Healy. 2006. \emph{\href{http://www.lastbestgifts.com}{Last Best Gifts: Altruism and the Market for Human Blood and Organs}}. Chicago:~University of Chicago Press. \vspace{0.05in}
+%
+%\ind \hspace{0.35in} \footnotesize Winner, Association for Research on Nonprofit Organizations and Voluntary Action (ARNOVA) Outstanding Book Prize. Finalist, C. Wright Mills Award. 
+%
+%\vspace{-0.075in}
+%
+%\normalsize
 
-\ind  Kieran Healy. 2006. \emph{\href{http://www.lastbestgifts.com}{Last Best Gifts: Altruism and the Market for Human Blood and Organs}}. Chicago:~University of Chicago Press. \vspace{0.05in}
-
-\ind \hspace{0.35in} \footnotesize Winner, Association for Research on Nonprofit Organizations and Voluntary Action (ARNOVA) Outstanding Book Prize. Finalist, C. Wright Mills Award. 
-
-\vspace{-0.075in}
-
-\normalsize
-
-\bigskip
+%\bigskip
 \noindent\emph{Journal articles \vspace{0.05in}}
  
 %% Use revnumerate environment if numbered publications are needed. 
@@ -348,47 +365,47 @@ Zuckerman. \emph{Contemporary Sociology} 28:~210--211.
  \bigskip
 
 %% Presentations
-\marginhead{\sffamily {\vskip 0.5em}selected \newline invited talks \newline since 2007}
-\medskip
-
-
-\ind ``Classification Situations.'' Yale University Center for Cultural Sociology, 2013.
- 
-\ind ``Scores and Classes.'' University of Pennsylvania, 2012.
-
-\ind ``The Performativity of Networks.'' Max Planck/Sciences Po Center, Paris, 2012. 
- 
-\ind ``Specialization and Status in Philosophy.'' Princeton University, 2010. 
-
-\ind Invited Discussant, ``For Love or Money?'', Center for the Interdisciplinary Study of Work and Social Capital, Washington University in St.\,Louis School of Law, 2010. 
-
-\ind ``Gift Fetishism and the Market for Human Organs.'' CAL Visiting Scholar Lecture Series, James Madison University, 2009. 
-
-\ind ``Specialization and Status in Philosophy.'' University of Chicago, Booth School of Business, 2009. 
-
-\ind ``Specialization and Status in Philosophy.'' University of California, Berkeley, 2009. 
-
-\ind ``Specialization and Status in Philosophy.'' University of Michigan, ICOS, 2009. 
-
-\ind ``Specialization and Status in Philosophy.'' Columbia University 2009. 
-
-\ind ``The Performativity of Networks.'' Yale University, 2009. 
-
-\ind ``The Performativity of Networks.'' Stanford University Graduate School of Business, 2008. 
-
-\ind ``The Performativity of Networks.'' Harvard/MIT Joint Seminar in Economic Sociology, 2008. 
-
-\ind ``Last Best Gifts: Altruism and the Market for Human Blood and Organs.'' Center for History, Society and Culture, University of California at Davis, 2007. 
-
-\ind ``Gift Fetishism and the Market for Human Organs.'' Department of Anthropology, University of Arizona, 2007. 
-
+%\marginhead{\sffamily {\vskip 0.5em}selected \newline invited talks \newline since 2007}
+%\medskip
+%
+%
+%\ind ``Classification Situations.'' Yale University Center for Cultural Sociology, 2013.
+% 
+%\ind ``Scores and Classes.'' University of Pennsylvania, 2012.%
+%
+%\ind ``The Performativity of Networks.'' Max Planck/Sciences Po Center, Paris, 2012. 
+% 
+%\ind ``Specialization and Status in Philosophy.'' Princeton University, 2010. 
+%
+%\ind Invited Discussant, ``For Love or Money?'', Center for the Interdisciplinary Study of Work and Social Capital, Washington University in St.\,Louis School of Law, 2010. 
+%
+%\ind ``Gift Fetishism and the Market for Human Organs.'' CAL Visiting Scholar Lecture Series, James Madison University, 2009. 
+%
+%\ind ``Specialization and Status in Philosophy.'' University of Chicago, Booth School of Business, 2009. 
+%
+%\ind ``Specialization and Status in Philosophy.'' University of California, Berkeley, 2009. 
+%
+%\ind ``Specialization and Status in Philosophy.'' University of Michigan, ICOS, 2009. 
+%
+%\ind ``Specialization and Status in Philosophy.'' Columbia University 2009. 
+%
+%\ind ``The Performativity of Networks.'' Yale University, 2009. 
+%
+%\ind ``The Performativity of Networks.'' Stanford University Graduate School of Business, 2008. 
+%
+%\ind ``The Performativity of Networks.'' Harvard/MIT Joint Seminar in Economic Sociology, 2008. 
+%
+%\ind ``Last Best Gifts: Altruism and the Market for Human Blood and Organs.'' Center for History, Society and Culture, University of California at Davis, 2007. 
+%
+%\ind ``Gift Fetishism and the Market for Human Organs.'' Department of Anthropology, University of Arizona, 2007. 
+%
 %\end{revnumerate}
 
-\bigskip
+%\bigskip
 
 %\newpage
 
-\marginhead{\sffamily {\vskip 0.5em}selected \newline conference \newline presentations \newline since 2007}
+\marginhead{\sffamily {\vskip 0.5em}selected \newline conference \newline presentations}
 \medskip
 
 \ind ``Dealing with Awkward Relations.'' Conference on New Theoretical Directions in Economic Sociology, Stockholm, September 2013. 
@@ -466,14 +483,14 @@ College, Cork, 1991--1993.
 \bigskip 
 
 
-\marginhead{\sffamily {\vskip 1.12em}service to the \newline profession}
+\marginhead{\sffamily {\vskip 1.12em}service}
 \medskip
 
 \medskip
 
 
-\marginhead{{\vskip 0.9em}Service to the \newline Profession}
-\medskip
+\centering
+{\tiny Compiled at \currenttime, \today}
 
 \medskip
 
